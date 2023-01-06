@@ -1,0 +1,71 @@
+#!/usr/bin/env bash
+
+# System settings:
+# - Keyboard
+# 	- Key repeat rate: Fast
+# 	- Delay until repeat: Short
+# 	- Keyboard Shortcuts...
+# 		- Modifier Keys
+# 			- Caps lock <-> Control
+#		- Input Sources
+#			- Turn off everything
+#		- Keyboard
+#			- Move focus to next window: alt-tab
+# 	- Input Sources > Edit
+# 		- Turn off everything
+# - Trackpad > More gestures
+#	- App Exposé: Swipe Down with Three Fingers
+#
+
+NVIM_CONFIG="$HOME/share/nvim-config"
+NVIM_PLUGINS="$HOME/share/nvim-plugins"
+DOTFILES="$HOME/share/dotfiles"
+KEYBOARD_LAYOUT="$HOME/share/keyboard-layout"
+
+# ---- Config ------------------------------------------------------------------
+
+mkdir -p ~/.config
+mkdir -p ~/.local/share/nvim/site/pack
+ln -s $NVIM_CONFIG ~/.config/nvim
+ln -s $NVIM_PLUGINS ~/.local/share/nvim/site/pack/all
+(cd $DOTFILES && ./symlink_create.sh)
+ln -s $KEYBOARD_LAYOUT/Ernst.bundle "$HOME/Library/Keyboard Layouts/Ernst.bundle"
+
+# ---- Misc tools --------------------------------------------------------------
+
+# git, fzf, curl, fd, z, ranger
+brew install git
+brew install fzf
+brew install curl
+brew install fd
+brew install z
+brew install ranger
+
+# bash
+brew install bash
+sudo "echo $(which bash)" >> /etc/shells
+chsh -s $(which bash)
+
+# ---- Compilers, languages, runtimes ------------------------------------------
+
+# Node, Go
+brew install node
+brew install go
+
+# ---- Neovim ------------------------------------------------------------------
+
+# Neovim
+brew install neovim
+
+# LSP servers
+npm install -g typescript-language-server typescript
+npm install -g prettier
+brew install gopls
+
+# Providers: Python, Node, Ruby
+pip3 install pynvim
+npm install -g neovim
+sudo gem install neovim
+
+# Treesitter (vim, lua, c are bundled with Neovim)
+nvim --headless -c "TSInstallSync! javascript typescript go" -c "quit"
