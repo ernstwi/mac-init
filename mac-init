@@ -17,10 +17,10 @@
 #   - App Exposé: Swipe Down with Three Fingers
 #
 
-NVIM_CONFIG="$HOME/share/nvim-config"
-NVIM_PLUGINS="$HOME/share/nvim-plugins"
-DOTFILES="$HOME/share/dotfiles"
-KEYBOARD_LAYOUT="$HOME/share/keyboard-layout"
+: "${DOTFILES:?Must be defined}"
+: "${NVIM_CONFIG:?Must be defined}"
+: "${NVIM_PLUGINS:?Must be defined}"
+: "${KEYBOARD_LAYOUT:?Must be defined}"
 
 # ---- Config ------------------------------------------------------------------
 
