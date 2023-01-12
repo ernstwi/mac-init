@@ -29,7 +29,7 @@ mkdir -p ~/.local/share/nvim/site/pack
 ln -s $NVIM_CONFIG ~/.config/nvim
 ln -s $NVIM_PLUGINS ~/.local/share/nvim/site/pack/all
 (cd $DOTFILES && ./symlink_create.sh)
-ln -s $KEYBOARD_LAYOUT/Ernst.bundle "$HOME/Library/Keyboard Layouts/Ernst.bundle"
+ln -s $KEYBOARD_LAYOUT/* "$HOME/Library/Keyboard Layouts/"
 
 # ---- Languages etc -----------------------------------------------------------
 
