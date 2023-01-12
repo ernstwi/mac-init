@@ -31,8 +31,15 @@ ln -s $NVIM_PLUGINS ~/.local/share/nvim/site/pack/all
 (cd $DOTFILES && ./symlink_create.sh)
 ln -s $KEYBOARD_LAYOUT/Ernst.bundle "$HOME/Library/Keyboard Layouts/Ernst.bundle"
 
+# ---- Languages etc -----------------------------------------------------------
+
+# Node, Go
+brew install node
+brew install go
+
 # ---- Misc tools --------------------------------------------------------------
 
+# git fzf curl fd z ranger nvr bat tldr 
 brew install git
 brew install fzf
 brew install curl
@@ -47,12 +54,6 @@ brew install tldr
 brew install bash
 sudo "echo $(which bash)" >> /etc/shells
 chsh -s $(which bash)
-
-# ---- Compilers, languages, runtimes ------------------------------------------
-
-# Node, Go
-brew install node
-brew install go
 
 # ---- Neovim ------------------------------------------------------------------
 
