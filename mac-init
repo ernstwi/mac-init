@@ -33,13 +33,15 @@ ln -s $KEYBOARD_LAYOUT/Ernst.bundle "$HOME/Library/Keyboard Layouts/Ernst.bundle
 
 # ---- Misc tools --------------------------------------------------------------
 
-# git, fzf, curl, fd, z, ranger
 brew install git
 brew install fzf
 brew install curl
 brew install fd
 brew install z
 brew install ranger
+brew install nvr
+brew install bat
+brew install tldr
 
 # bash
 brew install bash
