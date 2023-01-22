@@ -1,22 +1,5 @@
 #!/usr/bin/env bash
 
-# System settings:
-# - Keyboard
-#   - Key repeat rate: Fast
-#   - Delay until repeat: Short
-#   - Keyboard Shortcuts...
-#       - Modifier Keys
-#           - Caps lock <-> Control
-#       - Input Sources
-#           - Turn off everything
-#       - Keyboard
-#           - Move focus to next window: alt-tab
-#   - Input Sources > Edit
-#       - Turn off everything
-# - Trackpad > More gestures
-#   - App Exposé: Swipe Down with Three Fingers
-#
-
 : "${DOTFILES:?Must be defined}"
 : "${NVIM_CONFIG:?Must be defined}"
 : "${NVIM_PLUGINS:?Must be defined}"
