@@ -16,15 +16,14 @@ ln -s $KEYBOARD_LAYOUT/* "$HOME/Library/Keyboard Layouts/"
 
 # ---- Languages etc -----------------------------------------------------------
 
-# Node, Go
-brew install node
 brew install go
+
+# See TV4 > nvm
+# brew install node
 
 # ---- Misc tools --------------------------------------------------------------
 
-# git fzf curl fd z ranger nvr bat tldr 
 brew install git
-brew install fzf
 brew install curl
 brew install fd
 brew install z
@@ -32,11 +31,43 @@ brew install ranger
 brew install nvr
 brew install bat
 brew install tldr
+brew install trash
+brew install tree
+brew install pandoc
+brew install pass
+brew install universal-ctags
+
+brew install --cask hammerspoon
+brew install --cask karabiner-elements
 
 # bash
 brew install bash
-sudo "echo $(which bash)" >> /etc/shells
+sudo cat <<EOF > /etc/shells
+# List of acceptable shells for chpass(1).
+# Ftpd will not allow users to connect who are not using
+# one of these shells.
+
+/bin/bash
+/bin/csh
+/bin/dash
+/bin/ksh
+/bin/sh
+/bin/tcsh
+/bin/zsh
+/usr/local/bin/bash
+EOF
 chsh -s $(which bash)
+
+# fzf
+brew install fzf
+/usr/local/opt/fzf/install --all
+
+# ---- TV4 tools ---------------------------------------------------------------
+
+brew install pnpm
+
+# nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 
 # ---- Neovim ------------------------------------------------------------------
 
@@ -54,4 +85,4 @@ npm install -g neovim
 sudo gem install neovim
 
 # Treesitter (vim, lua, c are bundled with Neovim)
-nvim --headless -c "TSInstallSync! javascript typescript go" -c "quit"
+nvim --headless -c "TSInstallSync! javascript typescript go graphql" -c "quit"

@@ -33,9 +33,5 @@
 ## Third party
 
 - [Dash](https://kapeli.com/dash)
-- [Karabiner Elements](https://github.com/pqrs-org/Karabiner-Elements)
-    - TODO: Config
-- [Hammerspoon](https://github.com/Hammerspoon/hammerspoon)
-    - TODO: Config
 - [iTerm2](https://iterm2.com)
     - TODO: Config
